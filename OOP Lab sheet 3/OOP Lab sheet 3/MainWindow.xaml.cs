@@ -81,12 +81,80 @@ namespace OOP_Lab_sheet_3
         {
             Product p = new Product()
             {
-                ProductName = "hello gamers",
+                ProductName = "Kickapoo Jungle Joy Juice",
                 UnitPrice = 12.55m,
-                CategoryID = 5
+                CategoryID = 1
             };
 
+            db.Products.Add(p);
+            db.SaveChanges();
+
+
+            ShowProducts(lbxCustomerEx5);
             
+        }
+
+        private void ShowProducts(DataGrid currentGrid)
+        {
+            var query = from p in db.Products
+                        where p.Category.CategoryName.Equals("Beverages")
+                        orderby p.ProductID descending
+                        select new
+                        {
+                            p.ProductID,
+                            p.ProductName,
+                            p.Category.CategoryName,
+                            p.UnitPrice
+                        };
+
+            currentGrid.ItemsSource = query.ToList();
+        }
+
+        private void BtnQueryEx6_Click(object sender, RoutedEventArgs e)//Exercise 6 Update Product Information
+        {
+            Product p1 = (db.Products
+                .Where(p => p.ProductName.StartsWith("Kick"))
+                .Select(p => p)).First();
+
+            p1.UnitPrice = 10m;
+
+            db.SaveChanges();
+            ShowProducts(lbxCustomerEx6);
+
+        }
+
+        private void BtnQueryEx7_Click(object sender, RoutedEventArgs e)//Exercise 7 Multiple Update
+        {
+            var products = from p in db.Products
+                           where p.ProductName.StartsWith("Ch")
+                           select p;
+
+            foreach (var item in products)
+            {
+                item.UnitPrice = 100m;
+            }
+
+            db.SaveChanges();
+            ShowProducts(lbxCustomerEx7); 
+        }
+
+        private void BtnQueryEx8_Click(object sender, RoutedEventArgs e)//Exercise 8 Delete
+        {
+            var products = from p in db.Products
+                           where p.ProductName.StartsWith("Kick")
+                           select p;
+
+
+            db.Products.RemoveRange(products);
+            db.SaveChanges();
+            ShowProducts(lbxCustomerEx8);
+        }
+
+        private void BtnQueryEx9_Click(object sender, RoutedEventArgs e)//Exercise 9 Stored Procedure
+        {
+            var query = db.Customers_By_City("London");
+
+            lbxCustomerEx9.ItemsSource = query.ToList();
         }
     }
 }

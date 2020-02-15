@@ -54,12 +54,16 @@
         </TabItem>
         <TabItem Name="Ex5" Header="Ex5">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="161*"/>
+                    <ColumnDefinition Width="625*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnQueryEx5" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx5_Click"/>
-                <ListBox x:Name="lbxCustomerEx5" Grid.Row="1" Margin="10"/>
+                <Button x:Name="btnQueryEx5" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx5_Click" Grid.Column="1" Margin="195,36,356,36"/>
+                <DataGrid x:Name="lbxCustomerEx5" Grid.Row="1" Margin="10" Grid.ColumnSpan="2"/>
             </Grid>
         </TabItem>
         <TabItem Name="Ex6" Header="Ex6">
@@ -68,8 +72,8 @@
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnQueryEx6" Content="Query" Height="25" Grid.Row="0" Width="75"/>
-                <ListBox x:Name="lbxCustomerEx6" Grid.Row="1" Margin="10"/>
+                <Button x:Name="btnQueryEx6" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx6_Click"/>
+                <DataGrid x:Name="lbxCustomerEx6" Grid.Row="1" Margin="10"/>
             </Grid>
         </TabItem>
         <TabItem Name="Ex7" Header="Ex7">
@@ -78,18 +82,22 @@
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnQueryEx7" Content="Query" Height="25" Grid.Row="0" Width="75"/>
-                <ListBox x:Name="lbxCustomerEx7" Grid.Row="1" Margin="10"/>
+                <Button x:Name="btnQueryEx7" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx7_Click"/>
+                <DataGrid x:Name="lbxCustomerEx7" Grid.Row="1" Margin="10"/>
             </Grid>
         </TabItem>
         <TabItem Name="Ex8" Header="Ex8">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="251*"/>
+                    <ColumnDefinition Width="535*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnQueryEx8" Content="Query" Height="25" Grid.Row="0" Width="75"/>
-                <ListBox x:Name="lbxCustomerEx8" Grid.Row="1" Margin="10"/>
+                <Button x:Name="btnQueryEx8" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx8_Click" Grid.Column="1" Margin="105,36,356,36"/>
+                <DataGrid x:Name="lbxCustomerEx8" Grid.Row="1" Margin="10" Grid.ColumnSpan="2"/>
             </Grid>
         </TabItem>
         <TabItem Name="Ex9" Header="Ex9">
@@ -98,8 +106,8 @@
                     <RowDefinition Height="30*"/>
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnQueryEx9" Content="Query" Height="25" Grid.Row="0" Width="75"/>
-                <ListBox x:Name="lbxCustomerEx9" Grid.Row="1" Margin="10"/>
+                <Button x:Name="btnQueryEx9" Content="Query" Height="25" Grid.Row="0" Width="75" Click="BtnQueryEx9_Click"/>
+                <DataGrid x:Name="lbxCustomerEx9" Grid.Row="1" Margin="10"/>
             </Grid>
         </TabItem>
     </TabControl>
